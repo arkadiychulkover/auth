@@ -1,0 +1,25 @@
+.validatre-required{
+    font-weight: bold;
+}
+
+.validate-required::after{
+    content: "*";
+    color: red;
+}
+
+.errorlist{
+    color:red;
+    font-style:italic;
+    list-style-type: none;
+}
+.image-box{
+    width:200px;
+    height:200px;
+    border: 1px solid black;
+    position:relative;
+}
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}

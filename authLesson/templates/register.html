@@ -1,0 +1,18 @@
+{%extends "base_layout.html"%}
+{%block auth%}
+    <h1>Register</h1>
+    {% if button %}
+        <p style="color: red;">{{ form.errors }}</p>
+    
+    <form action="{% url 'login_view' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{{ button|default:'Login' }}"/>
+    </form>
+    {% else %}
+    <form action="{% url 'new_user' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{{ button|default:'Register' }}"/>
+    {% endif %}
+{%endblock%}
