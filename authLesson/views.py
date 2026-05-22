@@ -42,7 +42,7 @@ def logout_view(request: HttpRequest):
     logout(request)
     return redirect('login_page')
 
-
+#
 @login_required
 def auth_page(request: HttpRequest):
     return render(request, 'auth.html', {'user': request.user})
@@ -72,3 +72,10 @@ def create_manager(request: HttpRequest):
     else:
         form = RegistrationForm()
     return render(request, "base_form.html", {"form": form, "button": "Create Manager"})
+
+
+def test(request):
+    if request.method == 'POST':
+        a = 10
+    else:
+        print(a)
